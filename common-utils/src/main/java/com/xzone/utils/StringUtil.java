@@ -8,6 +8,9 @@ import java.util.Random;
 
 public class StringUtil extends StringUtils {
 
+    /**
+     * 获取3位数随机码
+     */
     public static String smsCodeThree() {
         return String.valueOf((new Random().nextInt(899) + 100));
     }
