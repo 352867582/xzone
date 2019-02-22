@@ -15,7 +15,6 @@ public class ContextHolderUtil {
     /**
      * SpringMvc下获取request
      *
-     * @return
      */
     public static HttpServletRequest getRequest() {
         return  ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
@@ -25,7 +24,6 @@ public class ContextHolderUtil {
     /**
      * SpringMvc下获取response
      *
-     * @return
      */
     public static HttpServletResponse getResponse() {
         return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
@@ -35,7 +33,6 @@ public class ContextHolderUtil {
     /**
      * SpringMvc下获取session
      *
-     * @return
      */
     public static HttpSession getSession() {
         HttpSession session = getRequest().getSession();
@@ -47,8 +44,6 @@ public class ContextHolderUtil {
      *
      * 直接从容器中获取BEAN对象
      *
-     * @param beanId BEAN的ID
-     * @return
      */
     public static Object getBean(String beanId) {
         return WebApplicationContextUtils.getRequiredWebApplicationContext(getSession().getServletContext())
@@ -59,8 +54,6 @@ public class ContextHolderUtil {
      *
      * 直接从容器中获取BEAN对象
      *
-     * @param name name
-     *  @param type 类型
      * @return
      */
     public static <T> T getBean(String name,Class<T> type) {
@@ -72,9 +65,6 @@ public class ContextHolderUtil {
      *
      * 直接从容器中获取BEAN对象
      *
-     * @param <T>
-     *
-     * @return
      */
     public static <T> T getBean(Class<T> t) {
         return WebApplicationContextUtils.getRequiredWebApplicationContext(getSession().getServletContext()).getBean(t);
