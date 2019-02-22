@@ -35,6 +35,9 @@ public class IpUtil {
         return ipV4;
     }
 
+    /**
+     * 获取本地ipV4地址
+     */
     public static String getLocalIpV4(String excludeIp) throws Exception {
         if (StringUtil.isBlank(excludeIp)) {
             excludeIp = LOCAL_DEFAULT_IP;
