@@ -15,7 +15,9 @@ public class IpUtil {
 
     protected static final String LOCAL_DEFAULT_IP = "127.0.0.1";
 
-
+    /**
+     * 获取ipV4地址
+     */
     public static List<String> getLocalIpV4() throws Exception {
         Enumeration<NetworkInterface> interfaceEnumeration = NetworkInterface.getNetworkInterfaces();
         while (interfaceEnumeration.hasMoreElements()) {
