@@ -48,5 +48,13 @@ public class StringUtil extends StringUtils {
         return map;
     }
 
-
+    /**
+     * 首字母大写
+     */
+    public static String firstCharToUpCase(String str) {
+        if (StringUtil.isBlank(str)) {
+            return str;
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
 }
