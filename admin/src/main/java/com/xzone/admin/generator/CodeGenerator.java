@@ -72,9 +72,9 @@ public class CodeGenerator {
         gc.setActiveRecord(true);
         gc.setDateType(DateType.ONLY_DATE);
         gc.setBaseColumnList(true);
-        mpg.setGlobalConfig(gc);
         gc.setServiceName("%sService");
         gc.setServiceImplName("%sServiceImpl");
+        mpg.setGlobalConfig(gc);
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl(URL);
@@ -190,13 +190,13 @@ public class CodeGenerator {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setSuperEntityClass("com.xzone.xinterface.base.BaseModel");
         strategy.setEntityLombokModel(true);
-        strategy.setRestControllerStyle(false);
+        strategy.setRestControllerStyle(true);
         strategy.setSuperControllerClass("com.xzone.admin.base.BaseController");
         strategy.setInclude(scanner("表名"));
         strategy.setEntityBuilderModel(true);
 //        strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(false);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
+//        strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
