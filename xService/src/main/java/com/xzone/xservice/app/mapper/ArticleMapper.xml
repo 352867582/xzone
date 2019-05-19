@@ -11,11 +11,12 @@
         <result column="VIEW_COUNT" property="viewCount" />
         <result column="THUMBS_UP" property="thumbsUp" />
         <result column="COMMENT_COUNT" property="commentCount" />
+        <result column="CONTENT" property="content" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        ARTICLE_ID, TITLE, TYPE, CREATE_DATE, VIEW_COUNT, THUMBS_UP, COMMENT_COUNT
+        ARTICLE_ID, TITLE, TYPE, CREATE_DATE, VIEW_COUNT, THUMBS_UP, COMMENT_COUNT, CONTENT
     </sql>
 
 </mapper>

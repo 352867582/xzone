@@ -36,6 +36,8 @@ public class AjaxJson {
 
     private Object data = null;// 返回的数据
 
+    private boolean hasNext;
+
     private LinkedHashMap<String, Object> extend = new LinkedHashMap<String, Object>();// 扩展数据
 
     public void put(String key, Object value) {

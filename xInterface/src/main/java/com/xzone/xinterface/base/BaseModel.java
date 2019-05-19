@@ -1,6 +1,5 @@
 package com.xzone.xinterface.base;
 
-import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -68,6 +67,12 @@ public class BaseModel<T extends BaseModel> extends Model<T> {
     private String orderBy;
 
     public IPage<T> selectPage(QueryWrapper<T> queryWrapper) {
+        if (currentPage == null) {
+            currentPage = 1;
+        }
+        if (pageSize == null) {
+            pageSize = 10;
+        }
         return super.selectPage(new Page<>(currentPage, pageSize), getRebuildWrapper(queryWrapper));
     }
 
@@ -120,8 +125,4 @@ public class BaseModel<T extends BaseModel> extends Model<T> {
         return queryWrapper;
     }
 
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this);
-    }
 }

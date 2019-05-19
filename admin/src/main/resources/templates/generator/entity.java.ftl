@@ -3,6 +3,7 @@ package ${cfg.packageEntity};
 <#list table.importPackages as pkg>
 <#if pkg != "com.baomidou.mybatisplus.extension.activerecord.Model">
 import ${pkg};
+import com.alibaba.fastjson.JSON;
 </#if>
 </#list>
 <#if swagger2>
@@ -150,4 +151,8 @@ public class ${entity} implements Serializable {
         "}";
     }
 </#if>
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
+    }
 }

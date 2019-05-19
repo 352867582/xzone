@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzone.xservice.app.dao.PayMccInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xzone.xinterface.app.model.PayMccInfo">
+        <id column="MCC_INFO_ID" property="mccInfoId" />
+        <result column="MCC_CODE" property="mccCode" />
+        <result column="WECHAT_CODE" property="wechatCode" />
+        <result column="ALIPAY_CODE" property="alipayCode" />
+        <result column="LEVEL_TYPE" property="levelType" />
+        <result column="LEVEL_SECOND_TYPE" property="levelSecondType" />
+        <result column="LEVEL_THIRD_TYPE" property="levelThirdType" />
+        <result column="MCC_DESC" property="mccDesc" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        MCC_INFO_ID, MCC_CODE, WECHAT_CODE, ALIPAY_CODE, LEVEL_TYPE, LEVEL_SECOND_TYPE, LEVEL_THIRD_TYPE, MCC_DESC
+    </sql>
+
+</mapper>

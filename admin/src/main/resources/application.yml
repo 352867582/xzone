@@ -45,8 +45,10 @@ spring:
         login-username: kongkong
         # 登录密码
         login-password: 123456
+  devtools:
+    add-properties: false
 server:
-  port: 8088
+  port: 8090
 mybatis-plus:
   mapper-locations: classpath*:com/xzone/**/mapper/*Mapper.xml
   type-aliases-package: com.xzone.**.model

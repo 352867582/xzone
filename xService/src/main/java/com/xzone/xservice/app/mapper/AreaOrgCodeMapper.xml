@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzone.xservice.app.dao.AreaOrgCodeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xzone.xinterface.app.model.AreaOrgCode">
+        <result column="AREA_ORG_CODE" property="areaOrgCode" />
+        <result column="NEW_MEANING" property="newMeaning" />
+        <result column="OLD_MEANING" property="oldMeaning" />
+        <result column="CODE_TYPE" property="codeType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        AREA_ORG_CODE, NEW_MEANING, OLD_MEANING, CODE_TYPE
+    </sql>
+
+</mapper>

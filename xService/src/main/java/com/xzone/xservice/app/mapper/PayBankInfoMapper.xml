@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzone.xservice.app.dao.PayBankInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xzone.xinterface.app.model.PayBankInfo">
+        <id column="BANK_ID" property="bankId" />
+        <result column="LINE_NUMBER" property="lineNumber" />
+        <result column="BANK_CODE" property="bankCode" />
+        <result column="CITY_CODE" property="cityCode" />
+        <result column="BANK_NAME" property="bankName" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        BANK_ID, LINE_NUMBER, BANK_CODE, CITY_CODE, BANK_NAME
+    </sql>
+
+</mapper>

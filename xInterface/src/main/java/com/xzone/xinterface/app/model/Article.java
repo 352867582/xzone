@@ -1,5 +1,6 @@
 package com.xzone.xinterface.app.model;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.xzone.xinterface.base.BaseModel;
@@ -56,13 +57,18 @@ public class Article extends BaseModel<Article> {
     @TableField("COMMENT_COUNT")
     private Integer commentCount;
 
-    @ApiModelProperty(value = "评论次数")
+    @ApiModelProperty(value = "文章内容")
     @TableField("CONTENT")
     private String content;
+
 
     @Override
     protected Serializable pkVal() {
         return this.articleId;
     }
 
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
+    }
 }

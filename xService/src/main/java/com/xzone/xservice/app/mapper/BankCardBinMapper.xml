@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzone.xservice.app.dao.BankCardBinMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xzone.xinterface.app.model.BankCardBin">
+        <id column="CARD_BIN_ID" property="cardBinId" />
+        <result column="BANK_NAME" property="bankName" />
+        <result column="BANK_INS_CODE" property="bankInsCode" />
+        <result column="CARD_NAME" property="cardName" />
+        <result column="CARD_NO_LEN" property="cardNoLen" />
+        <result column="CARD_BIN" property="cardBin" />
+        <result column="CARD_TYPE" property="cardType" />
+        <result column="CARD_BIN_LEN" property="cardBinLen" />
+        <result column="SHORT_BANK_NAME" property="shortBankName" />
+        <result column="CARD_BANK_NAME" property="cardBankName" />
+        <result column="BANK_SHORT_CODE" property="bankShortCode" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CARD_BIN_ID, BANK_NAME, BANK_INS_CODE, CARD_NAME, CARD_NO_LEN, CARD_BIN, CARD_TYPE, CARD_BIN_LEN, SHORT_BANK_NAME, CARD_BANK_NAME, BANK_SHORT_CODE
+    </sql>
+
+</mapper>
