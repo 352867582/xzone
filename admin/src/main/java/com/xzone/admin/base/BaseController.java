@@ -2,9 +2,11 @@ package com.xzone.admin.base;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.xzone.utils.ContextHolderUtil;
 import com.xzone.xinterface.base.BaseModel;
+import com.xzone.xinterface.common.constant.CommonConstant;
 import com.xzone.xinterface.common.vo.AjaxJson;
+import com.xzone.xinterface.sys.model.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -83,5 +85,13 @@ public class BaseController<T extends BaseModel> {
         return new AjaxJson().setData(select);
     }
 
+    public String getSysUserId() {
+        Object userIdObj = ContextHolderUtil.getRequest().getAttribute(CommonConstant.SYS_REQUEST_USER_ID);
+        return String.valueOf(userIdObj);
+    }
 
+    public SysUser getSysUser() {
+        Object userIdObj = ContextHolderUtil.getRequest().getAttribute(CommonConstant.SYS_REQUEST_USER_ID);
+        return new SysUser().selectById(String.valueOf(userIdObj));
+    }
 }

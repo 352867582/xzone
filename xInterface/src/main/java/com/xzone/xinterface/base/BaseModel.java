@@ -1,12 +1,13 @@
 package com.xzone.xinterface.base;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.Builder;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -34,31 +35,36 @@ public class BaseModel<T extends BaseModel> extends Model<T> {
      * 分页查新当前页
      */
     @TableField(exist = false)
-    private Integer currentPage = 1;
+    @ApiModelProperty(value = "分页当前页")
+    private Integer currentPage;
 
     /**
      * 分页查询条数
      */
     @TableField(exist = false)
-    private Integer pageSize = 10;
+    @ApiModelProperty(value = "分页条数")
+    private Integer pageSize;
 
     /**
      * 需要查询的字段
      */
 
     @TableField(exist = false)
+    @ApiModelProperty(value = "需要查询的字段")
     private String sqlSelect;
 
     /**
      * 需要过滤的字段
      */
     @TableField(exist = false)
+    @ApiModelProperty(value = "不需要查询的字段")
     private String sqlFilterSelect;
 
     /**
      * 排序
      */
     @TableField(exist = false)
+    @ApiModelProperty(value = "排序")
     private String orderBy;
 
     public IPage<T> selectPage(QueryWrapper<T> queryWrapper) {
@@ -112,5 +118,10 @@ public class BaseModel<T extends BaseModel> extends Model<T> {
             queryWrapper.apply(" 1 = 1 ORDER BY {0}", orderBy);
         }
         return queryWrapper;
+    }
+
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 }

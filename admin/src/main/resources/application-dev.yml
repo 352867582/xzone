@@ -4,6 +4,6 @@ logging:
       xzone: debug
 spring:
   datasource:
-    username: zhixuehui
-    password: zhiXuehui_1234
-    url: jdbc:mysql://localhost:23306/zhixuehui?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: paysearch
+    password: '!@#xqk352867582XQK'
+    url: jdbc:mysql://rm-wz9q8oisy0k2vuw283o.mysql.rds.aliyuncs.com:3306/paysearch?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8

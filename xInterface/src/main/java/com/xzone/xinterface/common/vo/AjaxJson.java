@@ -3,12 +3,14 @@ package com.xzone.xinterface.common.vo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.LinkedHashMap;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@Slf4j(topic = "系统返回")
 public class AjaxJson {
     //200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。
     //201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。
@@ -24,6 +26,7 @@ public class AjaxJson {
     //500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
     public final static int RET_SUCCESS = 1;
     public final static int RET_FAIL = 2;
+    public final static int UNAUTHORIZED = 401;
     /**
      * 1: 正确返回。其它: 失败
      */
@@ -52,9 +55,11 @@ public class AjaxJson {
         this.ret = AjaxJson.RET_SUCCESS;
     }
 
-    public void fail(String msg) {
+    public AjaxJson fail(String msg) {
         this.msg = msg;
         this.ret = AjaxJson.RET_FAIL;
+        log.info(msg);
+        return this;
     }
 
 }

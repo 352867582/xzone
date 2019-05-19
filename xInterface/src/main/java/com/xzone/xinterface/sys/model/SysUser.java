@@ -1,101 +1,65 @@
 package com.xzone.xinterface.sys.model;
 
-import java.util.Date;
-
-import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.xzone.xinterface.base.BaseModel;
-import java.io.Serializable;
-
 import com.xzone.xinterface.common.vo.validate.NotNull;
 import com.xzone.xinterface.common.vo.validate.ValidateEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * <p>
- *
+ * 系统用户表
  * </p>
  *
- * @author author
- * @since 2019-05-17
+ * @author kongkong
+ * @since 2019-05-19
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
+@ApiModel(value="SysUser对象", description="系统用户表")
 public class SysUser extends BaseModel<SysUser> {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
-    private String id;
+    @ApiModelProperty(value = "用户主键")
+    @TableId("USER_ID")
+    private String userId;
 
-    /**
-     * 真实名称
-     */
-    private String realname;
-
-    /**
-     * 用户名
-     */
+    @ApiModelProperty(value = "用户名")
+    @TableField("USER_NAME")
     @NotNull(validateGroup = ValidateEnum.LOGIN_GROUP)
-    private String username;
+    private String userName;
 
-    /**
-     * 头像
-     */
-    private String portrait;
-
-    /**
-     * 密码
-     */
+    @ApiModelProperty(value = "密码")
+    @TableField("PASSWORD")
     @NotNull(validateGroup = ValidateEnum.LOGIN_GROUP)
     private String password;
 
-    private String salt;
-
-    /**
-     * 邮件
-     */
-    private String email;
-
-    /**
-     * 联系电话
-     */
-    private String phone;
-
-    /**
-     * 系统用户的状态
-     */
-    private String status;
-
-    private String createBy;
-
+    @ApiModelProperty(value = "创建时间")
+    @TableField("CREATE_DATE")
     private Date createDate;
 
-    private String updateBy;
+    @ApiModelProperty(value = "头像")
+    @TableField("HEAR_IMG")
+    private String hearImg;
 
-    private Date updateDate;
+    @ApiModelProperty(value = "可用状态 1：可用  2：不可用")
+    @TableField("USED_STATUS")
+    private Integer usedStatus;
 
-    private String remarks;
-
-    private String delFlag;
-
-    /**
-     * '代理商标示，0系统用户，1代理商'
-     */
-    private String agentFlag;
-
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this);
-    }
 
     @Override
     protected Serializable pkVal() {
-        return this.id;
+        return this.userId;
     }
 
 }

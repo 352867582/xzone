@@ -18,12 +18,12 @@ public class CodeGenerator {
     /**
      * 作者名称
      */
-    private static final String AUTHOR = "author";
+    private static final String AUTHOR = "kongkong";
 
     /**
      * mysql连接地址
      */
-    private static final String URL = "jdbc:mysql://localhost:23306/zhixuehui?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8";
+    private static final String URL = "jdbc:mysql://rm-wz9q8oisy0k2vuw283o.mysql.rds.aliyuncs.com:3306/paysearch?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8";
 
     /**
      * 驱动名称
@@ -33,12 +33,12 @@ public class CodeGenerator {
     /**
      * 连接数据库的用户名
      */
-    private static final String USER_NAME = "zhixuehui";
+    private static final String USER_NAME = "paysearch";
 
     /**
      * 连接数据库的密码
      */
-    private static final String PASSWORD = "zhiXuehui_1234";
+    private static final String PASSWORD = "!@#xqk352867582XQK";
 
     /**
      * <p>
@@ -74,6 +74,7 @@ public class CodeGenerator {
         gc.setBaseColumnList(true);
         gc.setServiceName("%sService");
         gc.setServiceImplName("%sServiceImpl");
+        gc.setSwagger2(true);
         mpg.setGlobalConfig(gc);
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
