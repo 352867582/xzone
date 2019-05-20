@@ -38,8 +38,9 @@ public class PayBankInfoController extends BaseController<PayBankInfo> {
         if (StringUtil.isNotBlank(payBankInfo.getBankName())) {
             wrapper.and(i -> i.like("BANK_NAME", payBankInfo.getBankName()).or().eq("LINE_NUMBER", payBankInfo.getBankName()));
         }
+        wrapper.orderByAsc("LINE_NUMBER");
         Page<PayBankInfo> selectPage = (Page<PayBankInfo>) payBankInfo.selectPage(wrapper);
-        if (selectPage.getRecords().size() > 0) {
+        if (selectPage.getRecords().size() > 0 && (payBankInfo.getCurrentPage() == null || payBankInfo.getCurrentPage() == 1)) {
             hotSearchService.addHotSearch(new HotSearch().setSearchType(1).setTag(payBankInfo.getBankName()));
         }
         return new AjaxJson().setData(selectPage).setHasNext(selectPage.hasNext());

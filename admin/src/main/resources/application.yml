@@ -55,7 +55,8 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
 logging:
-  path: ../adminLog
+  path: ./adminLog
+  file: admin.log
 #  level:
 #    org.springframework.web: TRACE
 
