@@ -19,7 +19,7 @@ public class BaseController<T extends BaseModel> {
     /**
      * 分页查询 返回的数据包含分页信息
      */
-    @PostMapping(value = "/selectPageRecords")
+    @PostMapping(value = "/selectPage")
     @ResponseBody
     @SuppressWarnings("unchecked")
     public AjaxJson selectPageRecords(T t) {
@@ -30,7 +30,7 @@ public class BaseController<T extends BaseModel> {
     /**
      * 分页查询 返回的数据只有结果 不包含分页参数如共多少等等
      */
-    @PostMapping(value = "/selectPage")
+    @PostMapping(value = "/selectPageRecords")
     @ResponseBody
     @SuppressWarnings("unchecked")
     public AjaxJson selectPage(T t) {

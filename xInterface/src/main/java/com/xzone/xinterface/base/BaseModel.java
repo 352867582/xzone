@@ -120,7 +120,7 @@ public class BaseModel<T extends BaseModel> extends Model<T> {
             }
         }
         if (StringUtils.isNotBlank(orderBy)) {
-            queryWrapper.apply(" 1 = 1 ORDER BY {0}", orderBy);
+            queryWrapper.apply("1 = 1 ORDER BY " + orderBy);
         }
         return queryWrapper;
     }

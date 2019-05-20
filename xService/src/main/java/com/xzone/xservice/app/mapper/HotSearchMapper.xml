@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzone.xservice.app.dao.HotSearchMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xzone.xinterface.app.model.HotSearch">
+        <id column="HOT_ID" property="hotId" />
+        <result column="TAG" property="tag" />
+        <result column="SEARCH_NUM" property="searchNum" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="TAG_STATUS" property="tagStatus" />
+        <result column="SEARCH_TYPE" property="searchType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        HOT_ID, TAG, SEARCH_NUM, CREATE_DATE, TAG_STATUS, SEARCH_TYPE
+    </sql>
+
+</mapper>
