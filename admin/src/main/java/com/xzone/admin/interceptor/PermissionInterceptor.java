@@ -62,7 +62,7 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
             return false;
         }
         if (expiresAt.before(new Date())) {
-            ResponseUtil.responseRet(JSON.toJSONString(new AjaxJson().fail("token超市,请重新登录").setRet(AjaxJson.UNAUTHORIZED)));
+            ResponseUtil.responseRet(JSON.toJSONString(new AjaxJson().fail("token超时,请重新登录").setRet(AjaxJson.UNAUTHORIZED)));
             return false;
         }
         String userId = decodedJWT.getAudience().get(0);
