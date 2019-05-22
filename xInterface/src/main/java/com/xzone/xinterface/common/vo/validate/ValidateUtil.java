@@ -55,7 +55,7 @@ public class ValidateUtil {
                 }
                 String desc = notNull.desc();
                 if (StringUtil.isBlank(desc)) {
-                    desc = filedName + "不能为空";
+                    desc = field.getName() + "不能为空";
                 }
                 log.info("参数校验未通过:{}", desc);
                 return new AjaxJson().setRet(AjaxJson.RET_FAIL).setMsg(desc);

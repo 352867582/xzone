@@ -3,20 +3,18 @@ package com.xzone.admin.app.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xzone.admin.interceptor.SysPermission;
+import com.xzone.admin.base.BaseController;
 import com.xzone.utils.StringUtil;
 import com.xzone.xinterface.app.model.HotSearch;
-import com.xzone.xinterface.app.model.PayBankInfo;
+import com.xzone.xinterface.app.model.Institution;
 import com.xzone.xinterface.app.service.HotSearchService;
 import com.xzone.xinterface.common.vo.AjaxJson;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
-import com.xzone.admin.base.BaseController;
-import com.xzone.xinterface.app.model.Institution;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -31,11 +29,10 @@ import com.xzone.xinterface.app.model.Institution;
 @Slf4j
 public class InstitutionController extends BaseController<Institution> {
 
-    @Autowired
+    @Resource
     private HotSearchService hotSearchService;
 
     @PostMapping(value = "/selectInstitutionByNameOrCode")
-    @SysPermission
     public AjaxJson selectInstitutionByNameOrCode(Institution institution) {
         log.info("收单机构号或名称查询:{}", institution);
         QueryWrapper<Institution> wrapper = new QueryWrapper<>();
