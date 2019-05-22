@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/posRetCode")
-@Slf4j(topic = "POS应答码")
+@Slf4j
 public class PosRetCodeController extends BaseController<PosRetCode> {
 
     @Autowired

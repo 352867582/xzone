@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-@Slf4j(topic = "对象校验")
+@Slf4j
 public class ValidateUtil {
 
     public static AjaxJson validate(Object obj, ValidateEnum validateEnum) {

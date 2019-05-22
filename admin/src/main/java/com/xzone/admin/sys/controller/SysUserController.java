@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/sysUser")
-@Slf4j(topic = "系统用户操作")
+@Slf4j
 public class SysUserController {
 
     @PostMapping(value = "/login")

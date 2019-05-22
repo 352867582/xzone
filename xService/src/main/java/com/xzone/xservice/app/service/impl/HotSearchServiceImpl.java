@@ -24,7 +24,7 @@ import java.util.Date;
  * @since 2019-05-20
  */
 @Service
-@Slf4j(topic = "热搜标签操作")
+@Slf4j
 public class HotSearchServiceImpl extends ServiceImpl<HotSearchMapper, HotSearch> implements HotSearchService {
 
     @Override

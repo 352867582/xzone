@@ -3,6 +3,7 @@ package com.xzone.admin.app.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xzone.admin.interceptor.SysPermission;
 import com.xzone.utils.StringUtil;
 import com.xzone.xinterface.app.model.HotSearch;
 import com.xzone.xinterface.app.model.PayBankInfo;
@@ -27,13 +28,14 @@ import com.xzone.xinterface.app.model.Institution;
  */
 @RestController
 @RequestMapping("/institution")
-@Slf4j(topic = "收单机构")
+@Slf4j
 public class InstitutionController extends BaseController<Institution> {
 
     @Autowired
     private HotSearchService hotSearchService;
 
     @PostMapping(value = "/selectInstitutionByNameOrCode")
+    @SysPermission
     public AjaxJson selectInstitutionByNameOrCode(Institution institution) {
         log.info("收单机构号或名称查询:{}", institution);
         QueryWrapper<Institution> wrapper = new QueryWrapper<>();

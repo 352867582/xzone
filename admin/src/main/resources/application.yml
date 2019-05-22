@@ -55,8 +55,10 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
 logging:
-  path: ./adminLog
-  file: admin.log
+  file: ./adminLog/admin.log
+  pattern:
+    console:  "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(%-40.40logger{39}){cyan} %5L %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } %-40.40logger{39} %5L: %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
 #  level:
 #    org.springframework.web: TRACE
 

@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/payBankInfo")
-@Slf4j(topic = "联行号查询")
+@Slf4j
 public class PayBankInfoController extends BaseController<PayBankInfo> {
 
     @Autowired
