@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-@Slf4j(topic = "ResponseUtil")
+@Slf4j
 public class ResponseUtil {
 
     public static void responseRet(String data) {

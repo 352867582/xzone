@@ -2,6 +2,7 @@ package com.xzone.xinterface.app.service;
 
 import com.xzone.xinterface.app.model.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.scheduling.annotation.Async;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ArticleService extends IService<Article> {
 
+    public void testTask();
 }
