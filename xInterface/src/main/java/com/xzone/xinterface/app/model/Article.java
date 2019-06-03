@@ -12,6 +12,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -37,9 +38,9 @@ public class Article extends BaseModel<Article> {
     @TableField("TITLE")
     private String title;
 
-    @ApiModelProperty(value = "类型 1:新闻 2：使用帮助 3:广告")
-    @TableField("TYPE")
-    private Integer type;
+    @ApiModelProperty(value = "类型 1:新闻 2：使用帮助 3:广告. 查询多个个以逗号隔开")
+    @TableField("ARTICLE_TYPE")
+    private String articleType;
 
     @ApiModelProperty(value = "创建时间")
     @TableField("CREATE_DATE")
@@ -61,6 +62,21 @@ public class Article extends BaseModel<Article> {
     @TableField("CONTENT")
     private String content;
 
+    @ApiModelProperty(value = "文章排序")
+    @TableField("TOP_INDEX")
+    private Integer topIndex;
+
+    @ApiModelProperty(value = "状态： 0 下线 1上线")
+    @TableField("STATUS")
+    private Integer status;
+
+    @ApiModelProperty(value = "主题图片")
+    @TableField("THEME_PIC")
+    private String themePic;
+
+    @ApiModelProperty(value = "作者")
+    @TableField("CREATE_USER")
+    private String createUser;
 
     @Override
     protected Serializable pkVal() {
