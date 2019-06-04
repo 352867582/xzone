@@ -43,7 +43,7 @@ public class ArticleController extends BaseController<Article> {
             article.setArticleType(null);
 
         }
-        QueryWrapper<Article> wrapper = new QueryWrapper<>(article).orderByAsc("TOP_INDEX");
+        QueryWrapper<Article> wrapper = new QueryWrapper<>(article).orderByDesc("TOP_INDEX ASC,CREATE_DATE");
         if (articleTypeList.size() > 0) {
             wrapper.in("ARTICLE_TYPE", articleTypeList);
         }
